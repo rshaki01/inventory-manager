@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+
+.widget {
+    font-family: Roboto;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+    padding: 15px;
+    border-radius: 5px;
+    height: 100px;
+
+    .left, .right {
+        display: flex;
+        flex-direction: column; 
+        justify-content: space-between;
+    
+        .title {
+            font-weight: bold;
+            font-size: 20px;
+            color: gray;
+        }
+
+        .counter {
+            font-size: 28px;
+        }
+
+        .percentage {
+            align-self: flex-end;
+        }
+
+        .icon {
+            font-size: 50px;
+            align-self: flex-end;
+        }
+
+    }
+}
