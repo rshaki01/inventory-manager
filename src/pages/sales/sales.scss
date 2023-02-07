@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+.sales {
+    display: flex;
+    font-family: Roboto;
+    .salesContainer {
+        flex: 6;
+
+        .top {
+            padding: 20px;
+            color: gray;
+            margin: 20px;
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+            display: flex;
+
+        }
+
+        .table {
+          padding: 20px;
+          -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+          box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+          margin: 20px;
+        }
+    }
+}

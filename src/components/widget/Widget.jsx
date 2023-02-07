@@ -1,43 +1,50 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./widget.scss"
 import InsertChartOutlinedSharpIcon from '@mui/icons-material/InsertChartOutlinedSharp';
 import CreditCardOutlinedIcon from '@mui/icons-material/CreditCardOutlined';
 import StoreOutlinedIcon from '@mui/icons-material/StoreOutlined';
 import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
+import { GlobalContext } from '../../context/GlobalState';
 
 
 
 const Widget = ({ type }) => {
 
+  const context = useContext(GlobalContext);
+
   let data;
 
   switch (type) {
-    case "user":
+    case "inventory":
         data = {
-            title: "USERS",
+            title: "Inventory",
             isMoney: false,
-            icon: <InsertChartOutlinedSharpIcon className="icon"/>
+            icon: <InsertChartOutlinedSharpIcon className="icon"/>,
+            amount: 0
         };
         break;
     case "order":
         data = {
             title: "ORDERS",
             isMoney: false,
-            icon: <StoreOutlinedIcon className="icon"/>
+            icon: <StoreOutlinedIcon className="icon"/>,
+            amount: 0
         };
         break;
-    case "earnings":
+    case "sales":
         data = {
-            title: "EARNINGS",
+            title: "Sales",
             isMoney: true,
-            icon: <CreditCardOutlinedIcon className="icon"/>
+            icon: <CreditCardOutlinedIcon className="icon"/>,
+            amount: 0
         };
         break;
     case "balance":
         data = {
             title: "BALANCE",
             isMoney: true,
-            icon: <AccountBalanceWalletOutlinedIcon className="icon"/>
+            icon: <AccountBalanceWalletOutlinedIcon className="icon"/>,
+            amount: 0
         };
         break;
     default:
@@ -48,7 +55,7 @@ const Widget = ({ type }) => {
     <div className="widget">
         <div className="left">
             <div className="title">{data.title}</div>
-            <div className="counter"> {data.isMoney && "$"}999</div>
+            <div className="counter"> {data.isMoney && "$" && data.amount}</div>
         </div>
         <div className="right">
             <div className="percentage">20%</div>

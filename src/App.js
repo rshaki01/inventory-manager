@@ -1,5 +1,7 @@
 import Home from "./pages/home/Home";
 import Inventory from "./pages/inventory/Inventory";
+import Sales from "./pages/sales/Sales";
+import Expenses from "./pages/expenses/Expenses";
 import './components/sidebar/sidebar.scss'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import {GlobalProvider} from './context/GlobalState';
@@ -13,6 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/inventory" element={<Inventory />}/>
+          <Route path="/sales" element={<Sales />}/>
+          <Route path="/expenses" element={<Expenses />}/>
         </Routes>
       </BrowserRouter>
       </div>

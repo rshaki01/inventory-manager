@@ -20,11 +20,20 @@
       }
 
     .center {
+        
 
         ul {
             padding-left: 20px;
             padding-top: 50px;
             list-style: none;
+
+            a {
+                text-decoration: none;
+            }
+
+            a:visited {
+                color: black;
+            }
 
             li {
                 display: flex;

@@ -13,8 +13,7 @@ import Paper from '@mui/material/Paper';
 
 const InventoryTable = () => {
 
-  const { inventory } = useContext(GlobalContext);
-
+  const { inventory, sellItem, deleteItem } = useContext(GlobalContext);
 
   return (
     <div>
@@ -25,6 +24,7 @@ const InventoryTable = () => {
                 <TableCell>Item</TableCell>
                 <TableCell align="right">Purchase Price&nbsp;($)</TableCell>
                 <TableCell align="right">Listing Price&nbsp;($)</TableCell>
+                <TableCell align="right">Action</TableCell>
             </TableRow>
             </TableHead>
             <TableBody>
@@ -38,11 +38,12 @@ const InventoryTable = () => {
                 </TableCell>
                 <TableCell align="right">{item.purchasePrice}</TableCell>
                 <TableCell align="right">{item.listingPrice}</TableCell>
+                <TableCell align="right" className="actionButtons"><button onClick={() => sellItem(item)}>Sell</button>&nbsp;&nbsp;<button onClick={() => deleteItem(item)}>X</button></TableCell>
                 </TableRow>
             ))}
             </TableBody>
         </Table>
-    </TableContainer>
+      </TableContainer>
     </div>
   )
 }
