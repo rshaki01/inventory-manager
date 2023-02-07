@@ -10,7 +10,7 @@ import { GlobalContext } from '../../context/GlobalState';
 
 const Widget = ({ type }) => {
 
-  const context = useContext(GlobalContext);
+  const { sales } = useContext(GlobalContext);
 
   let data;
 
@@ -36,7 +36,7 @@ const Widget = ({ type }) => {
             title: "Sales",
             isMoney: true,
             icon: <CreditCardOutlinedIcon className="icon"/>,
-            amount: 0
+            amount: sales.reduce((acc, sale) => acc + (sale.listingPrice - sale.purchasePrice), 0)
         };
         break;
     case "balance":
