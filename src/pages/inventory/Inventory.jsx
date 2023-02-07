@@ -1,6 +1,7 @@
 import React, {useContext, useState} from 'react'
 import './inventory.scss'
 import Sidebar from '../../components/sidebar/Sidebar'
+import InventoryTable from '../../components/table/InventoryTable'
 import { GlobalContext } from '../../context/GlobalState'
 
 
@@ -11,7 +12,7 @@ const Inventory = () => {
   const [purchasePrice, setPurchasePrice] = useState(0);
   const [listingPrice, setListingPrice] = useState(0);
 
-  const {addItem, initialState} = useContext(GlobalContext)
+  const {addItem} = useContext(GlobalContext)
 
   let submit = (e) => {
     e.preventDefault();
@@ -51,6 +52,9 @@ const Inventory = () => {
                 <input type= "submit" value='Add Item' className='btn btn-block'/>
             </form>
         </div>
+        <div className="table">
+         <InventoryTable />
+      </div>
       </div>
     </div>
   )
