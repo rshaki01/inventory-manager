@@ -10,7 +10,7 @@ import { GlobalContext } from '../../context/GlobalState';
 
 const Widget = ({ type }) => {
 
-  const { sales } = useContext(GlobalContext);
+  const { sales, inventory, expenses } = useContext(GlobalContext);
 
   let data;
 
@@ -20,15 +20,16 @@ const Widget = ({ type }) => {
             title: "Inventory",
             isMoney: false,
             icon: <InsertChartOutlinedSharpIcon className="icon"/>,
-            amount: 0
+            amount: inventory.reduce((accumulator, currentValue) => accumulator + 1,0)
+              
         };
         break;
-    case "order":
+    case "net-profit":
         data = {
-            title: "ORDERS",
-            isMoney: false,
+            title: "Net Profit",
+            isMoney: true,
             icon: <StoreOutlinedIcon className="icon"/>,
-            amount: 0
+            amount: sales.reduce((acc, sale) => acc + (sale.listingPrice - sale.purchasePrice), 0) - expenses.reduce((acc, expense) => acc + expense.expenseAmount, 0)
         };
         break;
     case "sales":
@@ -39,12 +40,12 @@ const Widget = ({ type }) => {
             amount: sales.reduce((acc, sale) => acc + (sale.listingPrice - sale.purchasePrice), 0)
         };
         break;
-    case "balance":
+    case "expenses":
         data = {
-            title: "BALANCE",
+            title: "Total Expenses",
             isMoney: true,
             icon: <AccountBalanceWalletOutlinedIcon className="icon"/>,
-            amount: 0
+            amount: expenses.reduce((acc, expense) => acc + expense.expenseAmount, 0)
         };
         break;
     default:
@@ -55,7 +56,8 @@ const Widget = ({ type }) => {
     <div className="widget">
         <div className="left">
             <div className="title">{data.title}</div>
-            <div className="counter"> {data.isMoney && "$" && data.amount}</div>
+            <div className="counter"> {data.isMoney ? "$" + data.amount.toFixed(2) : data.amount}</div>
+            {/* {data.isMoney && "$"} {data.amount.toFixed(2)} */}
         </div>
         <div className="right">
             <div className="percentage">20%</div>

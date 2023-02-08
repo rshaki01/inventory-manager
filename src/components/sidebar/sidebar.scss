@@ -5,6 +5,8 @@
     font-family: 'Roboto';
     flex: 1;
     min-height: 100vh;
+    background-color: #181818;
+    color: #fafafa;
 
     .top {
         height: 50px;
@@ -26,13 +28,14 @@
             padding-left: 20px;
             padding-top: 50px;
             list-style: none;
+            font-size: 14px;
 
             a {
                 text-decoration: none;
             }
 
             a:visited {
-                color: black;
+                color: white;
             }
 
             li {
@@ -46,8 +49,10 @@
 
                 &:hover {    
 
-                    cursor: pointer;
+                    background-color: lightgoldenrodyellow;
+                    border-radius: 5px;
                 }
+            
 
             }
         }

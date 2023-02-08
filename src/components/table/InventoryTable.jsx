@@ -33,12 +33,12 @@ const InventoryTable = () => {
                 key={item.id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
-                <TableCell component="th" scope="row">
-                    {item.name}
-                </TableCell>
-                <TableCell align="right">{item.purchasePrice}</TableCell>
-                <TableCell align="right">{item.listingPrice}</TableCell>
-                <TableCell align="right" className="actionButtons"><button onClick={() => sellItem(item)}>Sell</button>&nbsp;&nbsp;<button onClick={() => deleteItem(item)}>X</button></TableCell>
+                  <TableCell component="th" scope="row">
+                      {item.name}
+                  </TableCell>
+                  <TableCell align="right">{item.purchasePrice}</TableCell>
+                  <TableCell align="right">{item.listingPrice}</TableCell>
+                  <TableCell align="right" className="actionButtons"><button onClick={() => sellItem(item)}>Sell</button>&nbsp;&nbsp;<button onClick={() => deleteItem(item)}>X</button></TableCell>
                 </TableRow>
             ))}
             </TableBody>
