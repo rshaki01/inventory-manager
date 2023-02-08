@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 
 
 .inventory {
@@ -6,27 +6,32 @@
     font-family: Roboto;
     .inventoryContainer {
         flex: 6;
-        background-color: #121212;
+        margin: 20px;
 
-        .top, .bottom {
-            padding: 20px;
-            color: gray;
-            margin: 20px;
-            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-            box-shadow: 2px 4px 10px 1px rgba(8, 8, 8, 0.47);
-            display: flex;
+        .top {
+          color: black;
+        }
 
+        .top h1 {
+          font-size: 30px;
+        }
+
+        .top p {
+          font-weight: 300;
+          margin: 10px 0px;
+          font-size: 14px;
         }
 
         .table {
-          padding: 20px;
-          -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-          box-shadow: 2px 4px 10px 1px rgba(8, 8, 8, 0.47);
-          margin: 20px;
+          padding: 10px 0px;
+          // -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+          // box-shadow: 2px 4px 10px 1px rgba(8, 8, 8, 0.47);
         }
         
         .bottom {
             display: block;
+            padding-top: 25px;
+            color: black;
             .add-form {
                 width: 100%;
                 margin: 10px;

@@ -21,7 +21,7 @@ const InventoryTable = () => {
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
             <TableRow>
-                <TableCell>Item</TableCell>
+                <TableCell>Name</TableCell>
                 <TableCell align="right">Purchase Price&nbsp;($)</TableCell>
                 <TableCell align="right">Listing Price&nbsp;($)</TableCell>
                 <TableCell align="right">Action</TableCell>

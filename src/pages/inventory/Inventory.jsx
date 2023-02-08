@@ -33,6 +33,7 @@ const Inventory = () => {
       <div className="inventoryContainer">
         <div className="top">
             <h1>Inventory</h1>
+            <p>Manage your inventory of products.</p>
         </div>
         <div className="bottom">
             <p>Add new item</p>
@@ -48,7 +49,7 @@ const Inventory = () => {
                 <div className="form-control-check">
                     <label>Listing Price</label>
                     <input type="number" value={listingPrice} onChange={(e) => setListingPrice((parseInt(e.target.value)))}/>
-                </div>       
+                </div>  
                 <input type= "submit" value='Add Item' className='btn btn-block'/>
             </form>
         </div>
