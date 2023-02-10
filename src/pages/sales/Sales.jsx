@@ -1,7 +1,6 @@
 import React from 'react'
 import Sidebar from '../../components/sidebar/Sidebar';
 import SalesTable from '../../components/table/SalesTable';
-import InventoryForm from '../../components/form/InventoryForm';
 import './sales.scss'
 
 const Sales = () => {
@@ -12,8 +11,8 @@ const Sales = () => {
       <Sidebar />
       <div className="salesContainer">
         <div className="top">
-            {/* <h1>Sales</h1> */}
-            <InventoryForm />
+            <h1>Sales</h1>
+            <p>Manage your sales.</p>
         </div>
         <div className="table">
           <SalesTable />

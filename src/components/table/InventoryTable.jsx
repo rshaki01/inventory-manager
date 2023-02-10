@@ -15,6 +15,7 @@ const InventoryTable = () => {
 
   const { inventory, sellItem, deleteItem } = useContext(GlobalContext);
 
+
   return (
     <div>
       <TableContainer component={Paper} elevation={0}>
@@ -25,12 +26,12 @@ const InventoryTable = () => {
                 <TableCell align="right">Purchase Price&nbsp;($)</TableCell>
                 <TableCell align="right">Listing Price&nbsp;($)</TableCell>
                 <TableCell align="right">Purchase Date</TableCell>
-
+                <TableCell align="right">Quantity</TableCell>
                 <TableCell align="right">Action</TableCell>
             </TableRow>
             </TableHead>
             <TableBody>
-            {inventory.map((item) => (
+            {inventory.map((item) =>  (
                 <TableRow
                 key={item.id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -41,6 +42,7 @@ const InventoryTable = () => {
                   <TableCell align="right">{item.purchasePrice}</TableCell>
                   <TableCell align="right">{item.listingPrice}</TableCell>
                   <TableCell align="right">{item.dateAdded}</TableCell>
+                  <TableCell align="right">{item.quantity}</TableCell>
                   <TableCell align="right" className="actionButtons"><button onClick={() => sellItem(item)}>Sell</button>&nbsp;&nbsp;<button onClick={() => deleteItem(item)}>X</button></TableCell>
                 </TableRow>
             ))}

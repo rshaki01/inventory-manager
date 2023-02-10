@@ -8,8 +8,10 @@ export default (state, action) => {
             return {...state, sales: [...state.sales, action.payload]}
         case 'ADD_EXPENSE':
             return {...state, expenses: [...state.expenses, action.payload]}
-            case 'DELETE_EXPENSE':
+        case 'DELETE_EXPENSE':
                 return {...state, expenses: state.expenses.filter(expense => expense.id !== action.payload.id)}
+        case 'DELETE_SALE':
+                return {...state, sales: state.sales.filter(sale => sale.id !== action.payload.id)}
         default:
             return state;
     }

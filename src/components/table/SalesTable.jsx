@@ -11,7 +11,8 @@ import Paper from '@mui/material/Paper';
 
 const SalesTable = () => {
 
-  const { sales } = useContext(GlobalContext);
+  const { sales, deleteSale } = useContext(GlobalContext);
+
 
   return (
     <div>
@@ -20,8 +21,11 @@ const SalesTable = () => {
             <TableHead>
             <TableRow>
                 <TableCell>Item</TableCell>
-                <TableCell align="right">Purchase Price&nbsp;($)</TableCell>
-                <TableCell align="right">Listing Price&nbsp;($)</TableCell>
+                <TableCell align="right">Profit ($)</TableCell>
+                <TableCell align="right">Purchase Price ($)</TableCell>
+                <TableCell align="right">Listing Price ($)</TableCell>
+                <TableCell align="right">Quantity</TableCell>
+                <TableCell align="right">Action</TableCell>
             </TableRow>
             </TableHead>
             <TableBody>
@@ -33,8 +37,11 @@ const SalesTable = () => {
                 <TableCell component="th" scope="row">
                     {sale.name}
                 </TableCell>
+                <TableCell sx={{color: (sale.listingPrice - sale.purchasePrice >= 0) ? '#1D8751' : '#E53E3E'}} align="right">{(sale.listingPrice - sale.purchasePrice) * sale.quantity}</TableCell>
                 <TableCell align="right">{sale.purchasePrice}</TableCell>
                 <TableCell align="right">{sale.listingPrice}</TableCell>
+                <TableCell align="right">{sale.quantity}</TableCell>
+                <TableCell align="right" className="actionButtons"><button onClick={() => deleteSale(sale)}>X</button></TableCell>
                 </TableRow>
             ))}
             </TableBody>

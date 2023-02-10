@@ -9,10 +9,14 @@ import { GlobalContext } from '../../context/GlobalState'
 
 const Inventory = () => {
 
+
+  let currDate = new Date();
+  currDate = currDate.toISOString().split('T')[0];
   const [name, setName] = useState('');
   const [purchasePrice, setPurchasePrice] = useState(0);
   const [listingPrice, setListingPrice] = useState(0);
-  const [dateAdded, setDateAdded] = useState();
+  const [dateAdded, setDateAdded] = useState(currDate);
+  const [quantity, setQuantity] = useState(1);
 
   const {addItem} = useContext(GlobalContext)
 
@@ -23,14 +27,21 @@ const Inventory = () => {
     if (!name) {
       alert('Please add an item name!')
       return;
+    } else if (purchasePrice < 0) {
+      alert('Please add a purchase price greater or equal to 0!')
+      return;
+    } else if (listingPrice < 0) {
+      alert('Please add a listing price greater or equal to 0!')
     } else if (!dateAdded) {
       alert('Please add a purchase date!')
       return;
+    } else if (quantity <= 0 ) {
+      alert('Please add a quantity greater than 0!')
     }
     // randomize ID
     const id = Math.floor(Math.random() * 100000) + 1;
     // create new item using state
-    let newItem = {id, name, purchasePrice, listingPrice, dateAdded};
+    let newItem = {id, name, purchasePrice, listingPrice, dateAdded, quantity,};
     addItem(newItem);
     setName('');
     setPurchasePrice(0);
@@ -65,6 +76,10 @@ const Inventory = () => {
                 <div className="form-control-check">
                     <label className="datelabel">Purchase Date</label>
                     <input className="dateinput" id="date" type="date" value={dateAdded} onChange={(e) => setDateAdded((e.target.value))}/>
+                </div>
+                <div className="form-control-check">
+                    <label>Quantity</label>
+                    <input type="number" value={quantity} onChange={(e) => setQuantity((parseInt(e.target.value)))}/>
                 </div>
                 <div className="form-control-check">
                   <input type= "submit" value='+' className='btn btn-block'/>

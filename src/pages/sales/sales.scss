@@ -6,22 +6,26 @@
     font-family: Roboto;
     .salesContainer {
         flex: 6;
+        margin: 20px;
 
         .top {
-            padding: 20px;
-            color: gray;
-            margin: 20px;
-            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-            box-shadow: 2px 4px 10px 1px rgba(8, 8, 8, 0.47);
-            display: flex;
+            color: black;
+
+            h1 {
+                font-size: 30px;
+                font-weight: 400;
+            }
+
+            p {
+                font-weight: 300;
+                margin: 10px 0px;
+                font-size: 14px;
+            }
 
         }
 
         .table {
-          padding: 20px;
-          -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-          box-shadow: 2px 4px 10px 1px rgba(8, 8, 8, 0.47);
-          margin: 20px;
+          padding: 10px 0px;
         }
     }
 }

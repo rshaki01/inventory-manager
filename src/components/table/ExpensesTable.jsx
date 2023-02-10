@@ -22,6 +22,7 @@ const ExpensesTable = () => {
             <TableRow>
                 <TableCell>Expense</TableCell>
                 <TableCell align="right">Expense Amount&nbsp;($)</TableCell>
+                <TableCell align="right">Purchase Date</TableCell>
                 <TableCell align="right">Action</TableCell>
             </TableRow>
             </TableHead>
@@ -35,6 +36,7 @@ const ExpensesTable = () => {
                     {expense.expenseName}
                 </TableCell>
                 <TableCell align="right">{expense.expenseAmount}</TableCell>
+                <TableCell align="right">{expense.dateAdded}</TableCell>
                 <TableCell align="right" className="actionButtons"><button onClick={() => deleteExpense(expense)}>X</button></TableCell>
                 </TableRow>
             ))}
