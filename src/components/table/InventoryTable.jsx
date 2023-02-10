@@ -24,6 +24,8 @@ const InventoryTable = () => {
                 <TableCell>Name</TableCell>
                 <TableCell align="right">Purchase Price&nbsp;($)</TableCell>
                 <TableCell align="right">Listing Price&nbsp;($)</TableCell>
+                <TableCell align="right">Purchase Date</TableCell>
+
                 <TableCell align="right">Action</TableCell>
             </TableRow>
             </TableHead>
@@ -38,6 +40,7 @@ const InventoryTable = () => {
                   </TableCell>
                   <TableCell align="right">{item.purchasePrice}</TableCell>
                   <TableCell align="right">{item.listingPrice}</TableCell>
+                  <TableCell align="right">{item.dateAdded}</TableCell>
                   <TableCell align="right" className="actionButtons"><button onClick={() => sellItem(item)}>Sell</button>&nbsp;&nbsp;<button onClick={() => deleteItem(item)}>X</button></TableCell>
                 </TableRow>
             ))}
