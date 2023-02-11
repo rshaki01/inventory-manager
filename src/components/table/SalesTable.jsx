@@ -13,7 +13,6 @@ const SalesTable = () => {
 
   const { sales, deleteSale } = useContext(GlobalContext);
 
-
   return (
     <div>
        <TableContainer component={Paper} elevation={0}>
@@ -25,6 +24,7 @@ const SalesTable = () => {
                 <TableCell align="right">Purchase Price ($)</TableCell>
                 <TableCell align="right">Listing Price ($)</TableCell>
                 <TableCell align="right">Quantity</TableCell>
+                <TableCell align="right">Date Sold</TableCell>
                 <TableCell align="right">Action</TableCell>
             </TableRow>
             </TableHead>
@@ -41,6 +41,7 @@ const SalesTable = () => {
                 <TableCell align="right">{sale.purchasePrice}</TableCell>
                 <TableCell align="right">{sale.listingPrice}</TableCell>
                 <TableCell align="right">{sale.quantity}</TableCell>
+                <TableCell align="right">{sale.dateAdded}</TableCell>
                 <TableCell align="right" className="actionButtons"><button onClick={() => deleteSale(sale)}>X</button></TableCell>
                 </TableRow>
             ))}

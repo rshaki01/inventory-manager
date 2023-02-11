@@ -10,8 +10,8 @@ const Home = () => {
       <div className="homeContainer">
         <div className="widgetContainer">
         <Widget type="inventory" />
-        <Widget type="net-profit" />
         <Widget type="expenses" />
+        <Widget type="net-profit" />
         <Widget type="sales" />
         </div>
         <div className="listContainer">

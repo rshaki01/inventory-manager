@@ -15,6 +15,24 @@ const InventoryTable = () => {
 
   const { inventory, sellItem, deleteItem } = useContext(GlobalContext);
 
+  let currDate = new Date();
+  let sellDate = new Date();
+  sellDate.setDate(currDate.getDate() + 4);
+  sellDate = sellDate.toISOString().split('T')[0];
+  
+  const sellItemHandleChange = (item) => {
+    const id = item.id;
+    const name = item.name;
+    const purchasePrice = item.purchasePrice;
+    const listingPrice = item.listingPrice;
+    const dateAdded = sellDate;
+    const quantity = item.quantity;
+
+    let newSale = {id, name, purchasePrice, listingPrice, dateAdded, quantity};
+    sellItem(newSale);
+    console.log(inventory);
+
+  }
 
   return (
     <div>
@@ -43,7 +61,7 @@ const InventoryTable = () => {
                   <TableCell align="right">{item.listingPrice}</TableCell>
                   <TableCell align="right">{item.dateAdded}</TableCell>
                   <TableCell align="right">{item.quantity}</TableCell>
-                  <TableCell align="right" className="actionButtons"><button onClick={() => sellItem(item)}>Sell</button>&nbsp;&nbsp;<button onClick={() => deleteItem(item)}>X</button></TableCell>
+                  <TableCell align="right" className="actionButtons"><button onClick={() => sellItemHandleChange(item)}>Sell</button>&nbsp;&nbsp;<button onClick={() => deleteItem(item)}>X</button></TableCell>
                 </TableRow>
             ))}
             </TableBody>

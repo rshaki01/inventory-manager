@@ -33,16 +33,6 @@ export const GlobalProvider = ({children}) => {
         )
     }
 
-    function sellItem(item) {
-        dispatch(
-            {
-                type: 'SELL_ITEM',
-                payload: item
-            }
-        )
-        deleteItem(item);
-    }
-
     // Expense Actions
 
     function addExpense(expense) {
@@ -64,6 +54,16 @@ export const GlobalProvider = ({children}) => {
     }
 
     // Sale Actions
+
+    function sellItem(item) {
+        dispatch(
+            {
+                type: 'SELL_ITEM',
+                payload: item
+            }
+        )
+        deleteItem(item);
+    }
 
     function deleteSale(sale) {
         dispatch(

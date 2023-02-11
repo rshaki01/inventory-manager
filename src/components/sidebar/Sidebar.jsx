@@ -25,12 +25,12 @@ const Sidebar = () => {
             <NavLink to="/inventory" style={({ isActive }) => { return { color: isActive ? 'burlywood' : undefined}}}><span>Inventory</span></NavLink>
           </li>
           <li>
-            <CreditCardOutlinedIcon />
-            <NavLink to="/sales" style={({ isActive }) => { return { color: isActive ? 'burlywood' : undefined}}}><span>Sales</span></NavLink>
-          </li>
-          <li>
             <LocalShippingOutlinedIcon />
             <NavLink to="/expenses" style={({ isActive }) => { return { color: isActive ? 'burlywood' : undefined}}}><span>Expenses</span></NavLink>
+          </li>
+          <li>
+            <CreditCardOutlinedIcon />
+            <NavLink to="/sales" style={({ isActive }) => { return { color: isActive ? 'burlywood' : undefined}}}><span>Sales</span></NavLink>
           </li>
           <li>
             <InsertChartOutlinedSharpIcon />
