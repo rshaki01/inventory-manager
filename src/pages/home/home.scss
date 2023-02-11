@@ -5,17 +5,16 @@
     font-family: Roboto;
     .homeContainer {
         flex: 6;
+        margin: 20px;
 
         .widgetContainer {
             display: flex;
             justify-content: space-evenly;
-            padding: 20px;
+            padding: 0px 10px;
             gap: 20px;
         }
 
         .listContainer {
-            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-            box-shadow: 2px 4px 10px 1px rgba(8, 8, 8, 0.47);
             padding: 15px;
             border-radius: 5px;
             margin: 20px;

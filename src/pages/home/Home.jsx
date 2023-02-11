@@ -9,10 +9,11 @@ const Home = () => {
       <Sidebar />
       <div className="homeContainer">
         <div className="widgetContainer">
-        <Widget type="inventory" />
-        <Widget type="expenses" />
         <Widget type="net-profit" />
         <Widget type="sales" />
+        <Widget type="expenses" />
+        <Widget type="inventory" />
+        <Widget type="num-sales" />
         </div>
         <div className="listContainer">
             <div className="listTitle">Latest Transactions</div>

@@ -1,10 +1,8 @@
 import React, { useContext } from 'react'
 import "./widget.scss"
-import InsertChartOutlinedSharpIcon from '@mui/icons-material/InsertChartOutlinedSharp';
-import CreditCardOutlinedIcon from '@mui/icons-material/CreditCardOutlined';
-import StoreOutlinedIcon from '@mui/icons-material/StoreOutlined';
-import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
 import { GlobalContext } from '../../context/GlobalState';
+import InfoIcon from '@mui/icons-material/Info';
+import Tooltip from '@mui/material/Tooltip';
 
 
 
@@ -18,8 +16,8 @@ const Widget = ({ type }) => {
     case "inventory":
         data = {
             title: "Inventory",
+            description: "Total number of items in your inventory tab.",
             isMoney: false,
-            icon: <InsertChartOutlinedSharpIcon className="icon"/>,
             amount: inventory.reduce((accumulator, currentValue) => accumulator + 1,0)
               
         };
@@ -27,25 +25,33 @@ const Widget = ({ type }) => {
     case "net-profit":
         data = {
             title: "Net Profit",
+            description: "Total sales after subtracting COGS and expenses.",
             isMoney: true,
-            icon: <StoreOutlinedIcon className="icon"/>,
-            amount: sales.reduce((acc, sale) => acc + (sale.listingPrice - sale.purchasePrice), 0) - expenses.reduce((acc, expense) => acc + expense.expenseAmount, 0)
+            amount: sales.reduce((acc, sale) => acc + (sale.listingPrice - sale.purchasePrice) * sale.quantity, 0) - expenses.reduce((acc, expense) => acc + expense.expenseAmount, 0)
         };
         break;
     case "sales":
         data = {
-            title: "Sales",
+            title: "Gross Sales",
+            description: "Total amount of sales before subtracting COGS and expenses.",
             isMoney: true,
-            icon: <CreditCardOutlinedIcon className="icon"/>,
-            amount: sales.reduce((acc, sale) => acc + (sale.listingPrice - sale.purchasePrice), 0)
+            amount: (sales.reduce((acc, sale) => acc + (sale.listingPrice - sale.purchasePrice) * sale.quantity, 0)) 
         };
         break;
     case "expenses":
         data = {
             title: "Total Expenses",
+            description: "Total spending on everything in your expense tab.",
             isMoney: true,
-            icon: <AccountBalanceWalletOutlinedIcon className="icon"/>,
             amount: expenses.reduce((acc, expense) => acc + expense.expenseAmount, 0)
+        };
+        break;
+    case "num-sales":
+        data = {
+            title: "Total Sales",
+            description: "Total number of sales in your sales tab.",
+            isMoney: false,
+            amount: sales.reduce((accumulator, currentValue) => accumulator + 1,0)
         };
         break;
     default:
@@ -56,12 +62,14 @@ const Widget = ({ type }) => {
     <div className="widget">
         <div className="left">
             <div className="title">{data.title}</div>
+            {/* <p>{data.description}</p> */}
             <div className="counter"> {data.isMoney ? "$" + data.amount.toFixed(2) : data.amount}</div>
             {/* {data.isMoney && "$"} {data.amount.toFixed(2)} */}
         </div>
-        <div className="right">
-            <div className="percentage">20%</div>
-            {data.icon}
+        <div className="right-icon">
+            <Tooltip title={data.description}>
+                <InfoIcon fontSize='small'/>
+            </Tooltip>
         </div>
     </div>
   )

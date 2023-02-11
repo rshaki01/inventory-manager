@@ -7,14 +7,12 @@
     display: flex;
     justify-content: space-between;
     flex: 1;
-    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-    box-shadow: 2px 4px 10px 1px rgba(8, 8, 8, 0.47);
     padding: 15px;
     border-radius: 5px;
     height: 100px;
-    color: #fafafa;
+    color: black;
 
-    .left, .right {
+    .left {
         display: flex;
         flex-direction: column; 
         justify-content: space-between;
@@ -23,6 +21,11 @@
             font-weight: bold;
             font-size: 20px;
             color: gray;
+        }
+
+        p{ 
+            font-weight: 300;
+            font-size: 14px;
         }
 
         .counter {
@@ -39,4 +42,10 @@
         }
 
     }
+
+    .right-icon {
+        color: lightgray;     
+    }
+
+
 }

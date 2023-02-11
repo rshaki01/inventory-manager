@@ -30,8 +30,6 @@ const InventoryTable = () => {
 
     let newSale = {id, name, purchasePrice, listingPrice, dateAdded, quantity};
     sellItem(newSale);
-    console.log(inventory);
-
   }
 
   return (

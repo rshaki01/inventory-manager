@@ -6,10 +6,13 @@ import ExpensesTable from '../../components/table/ExpensesTable';
 
 const Expenses = () => {
 
+  let currDate = new Date();
+  currDate = currDate.toISOString().split('T')[0];
   const [expenseName, setExpenseName] = useState('');
   const [expenseAmount, setExpenseAmount] = useState(0);
   const {addExpense} = useContext(GlobalContext);
-  const [dateAdded, setDateAdded] = useState();
+  const [dateAdded, setDateAdded] = useState(currDate);
+  
 
   const submit = (e) => {
     e.preventDefault();

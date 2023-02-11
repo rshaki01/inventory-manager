@@ -11,7 +11,6 @@ import Paper from '@mui/material/Paper';
 
 const ExpensesTable = () => {
 
-
   const { expenses, deleteExpense } = useContext(GlobalContext);
 
   return (
