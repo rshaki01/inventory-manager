@@ -8,7 +8,8 @@
     justify-content: space-between;
     flex: 1;
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 25px;
+    border: solid 1px rgb(223, 221, 221);
     height: 100px;
     color: black;
 
@@ -18,9 +19,9 @@
         justify-content: space-between;
     
         .title {
-            font-weight: bold;
+            font-weight: 400;
             font-size: 20px;
-            color: gray;
+            color: black;
         }
 
         p{ 
