@@ -15,7 +15,7 @@ const Widget = ({ type }) => {
   switch (type) {
     case "inventory":
         data = {
-            title: "Inventory",
+            title: "Inventory Value",
             description: "Total number of items in your inventory tab.",
             isMoney: false,
             amount: inventory.reduce((accumulator, currentValue) => accumulator + 1,0)

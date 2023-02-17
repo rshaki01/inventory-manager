@@ -15,13 +15,31 @@
         }
 
         .listContainer {
-            padding: 15px;
+            padding: 0px 15px;
             border-radius: 5px;
-            margin-top: 20px;            
+            margin-top: 20px;     
+       
             .listTitle {
                 font-weight: 500;
                 color: gray;
-                margin-bottom: 15px;
+                margin-bottom: 0px;
+            }
+
+            .statsContainer {
+                display: flex;
+                .latestTransactionChart {
+                    flex: 2;
+                    padding: 0 10px;
+                }
+                .extraStats {
+                    display: flex;
+                    flex-direction: column;  
+                    justify-content: space-evenly;
+                    margin-bottom: 10px;
+                    gap: 20px;
+                    margin: 0;
+                    width: 250px;
+                }
             }
         }
     }
