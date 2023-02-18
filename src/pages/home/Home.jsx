@@ -20,9 +20,9 @@ const Home = () => {
             <div className="statsContainer">
               <div className="latestTransactionChart"><TestChart className="testChart"/></div>
               <div className="extraStats">
-                  <Widget type="sales" />
-                  <Widget type="expenses" />
-                  <Widget type="inventory" />
+                  <Widget type="num-sales" />
+                  <Widget type="num-expenses" />
+                  <Widget type="num-inventory" />
               </div>
             </div>
         </div>

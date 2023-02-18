@@ -16,10 +16,19 @@ const Widget = ({ type }) => {
     case "inventory":
         data = {
             title: "Inventory Value",
+            description: "Total value (purchase price) of all the items in your inventory tab.",
+            isMoney: true,
+            amount: (inventory.reduce((acc, sale) => acc + inventory.purchasePrice, 0))
+              
+        };
+        break;
+    case "num-inventory":
+        data = {
+            title: "Total Items",
             description: "Total number of items in your inventory tab.",
             isMoney: false,
-            amount: inventory.reduce((accumulator, currentValue) => accumulator + 1,0)
-              
+             amount: inventory.reduce((accumulator, currentValue) => accumulator + 1,0)
+                  
         };
         break;
     case "net-profit":
@@ -52,6 +61,14 @@ const Widget = ({ type }) => {
             description: "Total number of sales in your sales tab.",
             isMoney: false,
             amount: sales.reduce((accumulator, currentValue) => accumulator + 1,0)
+        };
+        break;
+    case "num-expenses":
+        data = {
+            title: "Total Expenses",
+            description: "Total number of sales in your sales tab.",
+            isMoney: false,
+            amount: expenses.reduce((accumulator, currentValue) => accumulator + 1,0)
         };
         break;
     default:

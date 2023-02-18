@@ -48,6 +48,7 @@ const TestChart = () => {
     plugins : {
       legend: false
     },
+    responsive: true,
     scales : {
         x: {
             type: 'time',
