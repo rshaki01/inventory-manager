@@ -15,10 +15,10 @@ const InventoryTable = () => {
 
   const { inventory, sellItem, deleteItem } = useContext(GlobalContext);
 
-  // let currDate = new Date();
-  // let sellDate = new Date();
-  // sellDate.setDate(currDate.getDate() + 4);
-  // sellDate = sellDate.toISOString().split('T')[0];
+  let currDate = new Date();
+  let sellDate = new Date();
+  sellDate.setDate(currDate.getDate() + 4);
+  sellDate = sellDate.toISOString().split('T')[0];
   
   const sellItemHandleChange = (item) => {
     const id = item.id;

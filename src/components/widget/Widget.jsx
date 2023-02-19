@@ -18,7 +18,7 @@ const Widget = ({ type }) => {
             title: "Inventory Value",
             description: "Total value (purchase price) of all the items in your inventory tab.",
             isMoney: true,
-            amount: (inventory.reduce((acc, sale) => acc + inventory.purchasePrice, 0))
+            amount: (inventory.reduce((acc, item) => acc + item.purchasePrice, 0))
               
         };
         break;
